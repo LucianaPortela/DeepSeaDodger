@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6f98c3ac-264e-4a1f-9a51-fdb667243769" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/DeepSeaDodger.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/BROTHERBOLD.OTF" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy1Bg0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy1Bg1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy1Bg2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy1Bg3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy1Bg4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy1Bg5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy2Bg0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy2Bg1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy2Bg2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy2Bg3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy2Bg4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy2Bg5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy3Bg0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy3Bg1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy3Bg2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy3Bg3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy3Bg4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy3Bg5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy4Bg0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy4Bg1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy4Bg2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy4Bg3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy4Bg4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Enemy4Bg5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Food1Bg0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Food1Bg1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Food1Bg2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Food1Bg3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Food1Bg4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Food1Bg5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Level1Bg0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Level1Bg1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Level1Bg2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Level1Bg3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Level1Bg4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Level2Bg0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Level2Bg1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Level2Bg2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Level2Bg3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Level2Bg4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Level2Bg5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Level3Bg0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Level3Bg1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Level3Bg2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Level3Bg3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Level3Bg4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/MenuBg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Player1Bg0.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Player1Bg1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Player1Bg2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Player1Bg3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/Player1hurt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/ScoreBg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/Background.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/Const.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/DBProxy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/Enemy.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/Entity.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/EntityFactory.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/EntityMediator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/Game.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/Level.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/Menu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/Player.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/Score.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/code/__init__.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="3A2PiI7t3j1k6RMQA2D53CRnctP" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python..gitignore.executor": "Run",
+    "Python.Entity.executor": "Run",
+    "Python.Game.executor": "Run",
+    "Python.Level.executor": "Run",
+    "Python.Menu.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "ai.playground.ignore.import.keys.banner.in.settings": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/Luciana Portela/Desktop/LPA/DeepSeaDodger/asset",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Luciana Portela\Desktop\LPA\DeepSeaDodger\asset" />
+      <recent name="C:\Users\Luciana Portela\Desktop\LPA\DeepSeaDodger\code" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="DeepSeaDodger" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-PY-253.30387.173" />
+        <option value="bundled-python-sdk-4762d8aabb82-6d6dccd035ac-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-253.30387.173" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6f98c3ac-264e-4a1f-9a51-fdb667243769" name="Changes" comment="" />
+      <created>1771787817333</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1771787817333</updated>
+      <workItem from="1771787818367" duration="3747000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/DeepSeaDodger$_gitignore.coverage" NAME=".gitignore Coverage Results" MODIFIED="1771787901244" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DeepSeaDodger$Level.coverage" NAME="Level Coverage Results" MODIFIED="1771789839164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
+    <SUITE FILE_PATH="coverage/DeepSeaDodger$Entity.coverage" NAME="Entity Coverage Results" MODIFIED="1771790586643" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
+    <SUITE FILE_PATH="coverage/DeepSeaDodger$main.coverage" NAME="main Coverage Results" MODIFIED="1771791564949" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/DeepSeaDodger$Game.coverage" NAME="Game Coverage Results" MODIFIED="1771790398267" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
+    <SUITE FILE_PATH="coverage/DeepSeaDodger$Menu.coverage" NAME="Menu Coverage Results" MODIFIED="1771790782571" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/code" />
+  </component>
+</project>
