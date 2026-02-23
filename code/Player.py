@@ -21,3 +21,15 @@ class Player(Entity):
         if pressed_key[PLAYER_KEY_RIGHT[self.name]] and self.rect.right < WIN_WIDTH:
             self.rect.centerx += ENTITY_SPEED[self.name]
         pass
+
+    def apply_damage(self, damage):
+        if damage < 0:
+            self.health -= damage
+            return True
+        elif damage > 0:
+            current_time = pygame.time.get_ticks()
+            if current_time - self.last_hit > self.damage_delay:
+                self.health -= damage
+                self.last_hit = current_time
+                return True
+        return False
