@@ -8,6 +8,11 @@ C_GREEN = (0, 128, 0)
 C_CYAN = (0, 128, 128)
 C_BLUE = (11, 63, 184)
 
+# D
+
+DAMAGE_DELAY = 1000
+DAMAGE_SPRITE_DELAY = 200
+
 # E
 EVENT_ENEMY = pygame.USEREVENT + 1
 
@@ -29,11 +34,11 @@ ENTITY_SPEED = {
     'Level3Bg2': 2,
     'Level3Bg3': 1,
     'Level3Bg4': 1,
-    'Player1': 2,
-    'Enemy1': 2,
+    'Player1': 4,
+    'Enemy1': 1,
     'Enemy2': 2,
-    'Enemy3': 3,
-    'Enemy4': 4,
+    'Enemy3': 5,
+    'Enemy4': 3,
     'Enemy5': 2,
 }
 
@@ -55,12 +60,12 @@ ENTITY_HEALTH = {
     'Level3Bg2': 999,
     'Level3Bg3': 999,
     'Level3Bg4': 999,
-    'Player1': 30,
-    'Enemy1': 10,
-    'Enemy2': 30,
-    'Enemy3': 40,
-    'Enemy4': 60,
-    'Enemy5': 10,
+    'Player1': 100,
+    'Enemy1': 1,
+    'Enemy2': 1,
+    'Enemy3': 1,
+    'Enemy4': 1,
+    'Enemy5': 1,
 }
 
 ENTITY_DAMAGE = {
@@ -82,11 +87,11 @@ ENTITY_DAMAGE = {
     'Level3Bg3': 0,
     'Level3Bg4': 0,
     'Player1': 1,
-    'Enemy1': 20,
-    'Enemy2': 60,
-    'Enemy3': 80,
-    'Enemy4': 100,
-    'Enemy5': -10,
+    'Enemy1': 10,
+    'Enemy2': 50,
+    'Enemy3': 40,
+    'Enemy4': 30,
+    'Enemy5': -50,
 }
 
 ENTITY_SCORE = {
@@ -128,7 +133,7 @@ PLAYER_KEY_RIGHT = {'Player1': pygame.K_d}
 
 # T
 TIMEOUT_STEP = 100
-TIMEOUT_LEVEL = 6000
+TIMEOUT_LEVEL = 20000
 
 # W
 WIN_WIDTH = 576
@@ -136,15 +141,19 @@ WIN_HEIGHT = 324
 
 # S
 SPAWN_TIME = {
-    'Level1': 500,
-    'Level2': 500,
+    'Level1': 2000,
+    'Level2': 1000,
     'Level3': 500,
 }
 
-SCORE_POS = {'Title': (WIN_WIDTH / 2, 50),
-             'EnterName': (WIN_WIDTH / 2, 80),
+SCORE_POS = {'Title': (WIN_WIDTH / 2, 45),
+             'Subtitle': (WIN_WIDTH / 2, 85),
+             'EnterName': (WIN_WIDTH / 2, 120),
              'Label': (WIN_WIDTH / 2, 90),
-             'Name': (WIN_WIDTH / 2, 110),
+             'Name': (WIN_WIDTH / 2, 160),
+             'PlayerName': (WIN_WIDTH * 0.25),
+             'PlayerScore': (WIN_WIDTH * 0.50),
+             'PlayerDate': (WIN_WIDTH * 0.75),
              0: (WIN_WIDTH / 2, 110),
              1: (WIN_WIDTH / 2, 130),
              2: (WIN_WIDTH / 2, 150),

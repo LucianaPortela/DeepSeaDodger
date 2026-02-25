@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 
 import pygame
 
-from code.Const import ENTITY_HEALTH, ENTITY_DAMAGE, ENTITY_SCORE
+from code.Const import ENTITY_HEALTH, ENTITY_DAMAGE, ENTITY_SCORE, DAMAGE_DELAY, DAMAGE_SPRITE_DELAY
 
 
 class Entity(ABC):
@@ -17,8 +17,8 @@ class Entity(ABC):
         self.score = ENTITY_SCORE[self.name]
         self.animation_list = []
         self.last_hit = 0
-        self.damage_delay = 1000
-        self.sprite_damage_delay = 200
+        self.damage_delay = DAMAGE_DELAY
+        self.damage_sprite_delay = DAMAGE_SPRITE_DELAY
 
         if 'Level' in self.name:
             self.surf = pygame.image.load(f'./asset/{self.name}.png').convert_alpha()
@@ -53,7 +53,7 @@ class Entity(ABC):
 
     def animation(self):
         current_time = pygame.time.get_ticks()
-        if current_time - self.last_hit < self.sprite_damage_delay:
+        if current_time - self.last_hit < self.damage_sprite_delay:
             try:
                 self.surf = pygame.image.load('./asset/Player1hurt.png').convert_alpha()
                 self.surf = pygame.transform.scale(self.surf, (30, 30))

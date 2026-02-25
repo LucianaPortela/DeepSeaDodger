@@ -6,9 +6,8 @@ import pygame
 from pygame import Rect
 from pygame.font import Font
 from pygame.surface import Surface
-from code.Const import MENU_OPTION, C_ORANGE, TIMEOUT_LEVEL, TIMEOUT_STEP, EVENT_TIMEOUT, EVENT_ENEMY, C_WHITE, \
-    WIN_HEIGHT, SPAWN_TIME, WIN_WIDTH
-from code.Enemy import Enemy
+from code.Const import C_ORANGE, TIMEOUT_LEVEL, TIMEOUT_STEP, EVENT_TIMEOUT, EVENT_ENEMY, C_WHITE, \
+    WIN_HEIGHT, SPAWN_TIME, WIN_WIDTH, ENTITY_HEALTH
 from code.Entity import Entity
 from code.EntityFactory import EntityFactory
 from code.EntityMediator import EntityMediator
@@ -16,21 +15,24 @@ from code.Player import Player
 
 
 class Level:
-    def __init__(self,window: Surface, name: str, game_mode: str, player_score: list[int]):
+    def __init__(self, window: Surface, name: str, game_mode: str, player_score: list[int], player_position: list, player_health: list[int]):
         self.window = window
         self.timeout = TIMEOUT_LEVEL
         self.name = name
         self.game_mode = game_mode
         self.entity_list: list[Entity] = []
         self.entity_list.extend(EntityFactory.get_entity(self.name))
-
-        tempo_fase = SPAWN_TIME.get(self.name, 2000)
-        pygame.time.set_timer(EVENT_ENEMY, tempo_fase)
+        self.spawn_time = SPAWN_TIME.get(self.name)
+        self.player_health = player_health
+        pygame.time.set_timer(EVENT_ENEMY, self.spawn_time)
         pygame.time.set_timer(EVENT_TIMEOUT, TIMEOUT_STEP)
-
         player = EntityFactory.get_entity('Player1')
         player.score = player_score[0]
+        player.rect.left = player_position[0]
+        player.rect.top = player_position[1]
+        player.health = player_health[0]
         self.entity_list.append(player)
+        self.player_position = player_position
 
     def level_text(self, text_size: int, text: str, text_color: tuple, text_pos: tuple):
         text_font: Font = pygame.font.Font('./asset/BALOOBHAIJAAN-REGULAR.TTF', text_size)
@@ -48,7 +50,8 @@ class Level:
                 ent.move()
                 ent.animation()
                 if ent.name == 'Player1':
-                    self.level_text(20, f'VIDA: {ent.health} | MINHOCAS: {ent.score}', C_ORANGE, (10, 30))
+                    self.level_text(20, f'VIDA: {ent.health}', C_ORANGE, (10, 30))
+                    self.level_text(20, f'MINHOCAS: {ent.score}', C_ORANGE, (10, 50))
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -59,15 +62,24 @@ class Level:
                     elif self.name == 'Level2':
                         choice = random.choice(('Enemy2', 'Enemy4', 'Enemy5'))
                     elif self.name == 'Level3':
-                        choice = random.choice(('Enemy2', 'Enemy3', 'Enemy5'))
+                        choice = random.choice(('Enemy2', 'Enemy3', 'Enemy3', 'Enemy3', 'Enemy5'))
                     self.entity_list.append(EntityFactory.get_entity(choice))
+
                 if event.type == EVENT_TIMEOUT:
                     self.timeout -= TIMEOUT_STEP
+                    if self.spawn_time > 800:
+                        self.spawn_time -= 20
+                        pygame.time.set_timer(EVENT_ENEMY, self.spawn_time)
+
                     if self.timeout == 0:
                         for ent in self.entity_list:
                             if isinstance(ent, Player) and ent.name == 'Player1':
                                 player_score[0] = ent.score
+                                self.player_position[0] = ent.rect.left
+                                self.player_position[1] = ent.rect.top
+                                self.player_health[0] = ent.health
                         return True
+
                 found_player = False
                 for ent in self.entity_list:
                     if isinstance(ent, Player):

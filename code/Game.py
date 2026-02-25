@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import sys
 import pygame
-from code.Const import WIN_WIDTH, WIN_HEIGHT, MENU_OPTION
+from code.Const import WIN_WIDTH, WIN_HEIGHT, MENU_OPTION, ENTITY_HEALTH
 from code.Level import Level
 from code.Menu import Menu
 from code.Score import Score
@@ -22,19 +22,21 @@ class Game:
 
             if menu_return == MENU_OPTION[0]:
                 player_score = [0]
-                level = Level(self.window, 'Level1', menu_return, player_score)
+                player_position = [10, WIN_HEIGHT / 2]
+                player_health = [ENTITY_HEALTH['Player1']]
+                level = Level(self.window, 'Level1', menu_return, player_score, player_position, player_health)
                 level_return = level.run(player_score)
                 if level_return:
-                    level = Level(self.window, 'Level2', menu_return, player_score)
+                    level = Level(self.window, 'Level2', menu_return, player_score, player_position,player_health)
                     level_return = level.run(player_score)
                     if level_return:
-                        level = Level(self.window, 'Level3', menu_return, player_score)
+                        level = Level(self.window, 'Level3', menu_return, player_score, player_position, player_health)
                         level_return = level.run(player_score)
                         if level_return:
                             score.save(menu_return, player_score)
 
             elif menu_return == MENU_OPTION[1]:
-                pass
+                score.show()
 
             elif menu_return == MENU_OPTION[2]:
                 pygame.quit()
