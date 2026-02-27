@@ -45,7 +45,7 @@ class EntityMediator:
 
     @staticmethod
     def verify_collision(entity_list: list[Entity]):
-        for i in range (len(entity_list)):
+        for i in range(len(entity_list)):
             entity1 = entity_list[i]
             EntityMediator.__verify_collision_window(entity1)
             for j in range(i + 1, len(entity_list)):

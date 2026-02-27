@@ -90,7 +90,7 @@ ENTITY_DAMAGE = {
     'Enemy2': 60,
     'Enemy3': 70,
     'Enemy4': 40,
-    'Enemy5': -5,
+    'Enemy5': -10,
 }
 
 ENTITY_SCORE = {
@@ -132,7 +132,7 @@ PLAYER_KEY_RIGHT = {'Player1': pygame.K_d}
 
 # T
 TIMEOUT_STEP = 100
-TIMEOUT_LEVEL = 60000
+TIMEOUT_LEVEL = 30000
 
 # W
 WIN_WIDTH = 576
@@ -145,10 +145,10 @@ SPAWN_TIME = {
     'Level3': 500,
 }
 
-SCORE_POS = {'Title': (WIN_WIDTH / 2, 45),
-             'Subtitle': (WIN_WIDTH / 2, 85),
+SCORE_POS = {'Title': (WIN_WIDTH / 2, 35),
+             'Subtitle': (WIN_WIDTH / 2, 90),
              'EnterName': (WIN_WIDTH / 2, 120),
-             'Label': (WIN_WIDTH / 2, 90),
+             'Label': (WIN_WIDTH / 2, 80),
              'Name': (WIN_WIDTH / 2, 160),
              'PlayerName': (WIN_WIDTH * 0.25),
              'PlayerScore': (WIN_WIDTH * 0.50),

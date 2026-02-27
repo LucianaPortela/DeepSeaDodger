@@ -9,6 +9,10 @@ from code.Const import WIN_HEIGHT, WIN_WIDTH, ENTITY_SPEED, PLAYER_KEY_RIGHT, PL
 class Player(Entity):
     def __init__(self, name: str, position: tuple):
         super().__init__(name, position)
+        self.sound_eat = pygame.mixer.Sound('./asset/Point.wav')
+        self.sound_eat.set_volume(0.3)
+        self.sound_damage = pygame.mixer.Sound('./asset/Attack.wav')
+        self.sound_damage.set_volume(0.3)
 
     def move(self, ):
         pressed_key = pygame.key.get_pressed()
@@ -25,11 +29,13 @@ class Player(Entity):
     def apply_damage(self, damage):
         if damage < 0:
             self.health -= damage
+            self.sound_eat.play()
             return True
         elif damage > 0:
             current_time = pygame.time.get_ticks()
             if current_time - self.last_hit > self.damage_delay:
                 self.health -= damage
                 self.last_hit = current_time
+                self.sound_damage.play()
                 return True
         return False

@@ -28,13 +28,13 @@ class Entity(ABC):
                 try:
                     image = pygame.image.load(image_path).convert_alpha()
                     if self.name == 'Player1':
-                        image = pygame.transform.scale(image, (40,30))
+                        image = pygame.transform.scale(image, (40, 30))
                     elif 'Enemy1' in self.name:
                         image = pygame.transform.scale(image, (80, 60))
                     elif 'Enemy2' in self.name:
                         image = pygame.transform.scale(image, (180, 100))
                     elif 'Enemy3' in self.name:
-                        image = pygame.transform.scale(image, (70, 50))
+                        image = pygame.transform.scale(image, (80, 60))
                     elif 'Enemy4' in self.name:
                         image = pygame.transform.scale(image, (80, 70))
                     elif 'Enemy5' in self.name:
@@ -45,7 +45,6 @@ class Entity(ABC):
                     break
             if self.animation_list:
                 self.surf = self.animation_list[0]
-
 
         self.rect = self.surf.get_rect(left=position[0], top=position[1])
         self.health = ENTITY_HEALTH[self.name]

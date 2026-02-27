@@ -30,7 +30,7 @@ class Game:
                 level = Level(self.window, 'Level1', menu_return, player_score, player_position, player_health)
                 level_return = level.run(player_score)
                 if level_return:
-                    level = Level(self.window, 'Level2', menu_return, player_score, player_position,player_health)
+                    level = Level(self.window, 'Level2', menu_return, player_score, player_position, player_health)
                     level_return = level.run(player_score)
                     if level_return:
                         level = Level(self.window, 'Level3', menu_return, player_score, player_position, player_health)

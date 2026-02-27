@@ -6,16 +6,18 @@ import pygame
 from pygame import Rect
 from pygame.font import Font
 from pygame.surface import Surface
-from code.Const import C_ORANGE, TIMEOUT_LEVEL, TIMEOUT_STEP, EVENT_TIMEOUT, EVENT_ENEMY, C_WHITE, \
-    WIN_HEIGHT, SPAWN_TIME, WIN_WIDTH, ENTITY_HEALTH
+from code.Const import TIMEOUT_LEVEL, TIMEOUT_STEP, EVENT_TIMEOUT, EVENT_ENEMY, C_WHITE, \
+    WIN_HEIGHT, SPAWN_TIME, WIN_WIDTH, C_RED
 from code.Entity import Entity
 from code.EntityFactory import EntityFactory
 from code.EntityMediator import EntityMediator
+from code.GameOver import GameOver
 from code.Player import Player
 
 
 class Level:
-    def __init__(self, window: Surface, name: str, game_mode: str, player_score: list[int], player_position: list, player_health: list[int]):
+    def __init__(self, window: Surface, name: str, game_mode: str, player_score: list[int], player_position: list,
+                 player_health: list[int]):
         self.window = window
         self.timeout = TIMEOUT_LEVEL
         self.name = name
@@ -33,13 +35,18 @@ class Level:
         player.health = player_health[0]
         self.entity_list.append(player)
         self.player_position = player_position
+        self.icon_time = pygame.image.load('./asset/Time.png').convert_alpha()
+        self.icon_time = pygame.transform.scale(self.icon_time, (20, 20))
+        self.icon_heart = pygame.image.load('./asset/Heart.png').convert_alpha()
+        self.icon_heart = pygame.transform.scale(self.icon_heart, (20, 20))
+        self.icon_worm = pygame.image.load('./asset/Worm.png').convert_alpha()
+        self.icon_worm = pygame.transform.scale(self.icon_worm, (20, 20))
 
     def level_text(self, text_size: int, text: str, text_color: tuple, text_pos: tuple):
-        text_font: Font = pygame.font.Font('./asset/BALOOBHAIJAAN-REGULAR.TTF', text_size)
+        text_font: Font = pygame.font.Font('./asset/Ithaca.ttf', text_size)
         text_surf: Surface = text_font.render(text, True, text_color).convert_alpha()
         text_rect: Rect = text_surf.get_rect(left=text_pos[0], top=text_pos[1])
         self.window.blit(source=text_surf, dest=text_rect)
-
 
     def run(self, player_score: list[int]):
         clock = pygame.time.Clock()
@@ -53,8 +60,10 @@ class Level:
                 ent.move()
                 ent.animation()
                 if ent.name == 'Player1':
-                    self.level_text(20, f'VIDA: {ent.health}', C_ORANGE, (10, 30))
-                    self.level_text(20, f'MINHOCAS: {ent.score}', C_ORANGE, (10, 50))
+                    self.window.blit(self.icon_heart, (10, 35))
+                    self.level_text(30, f'{ent.health}', C_RED, (35, 30))
+                    self.window.blit(self.icon_worm, (10, 60))
+                    self.level_text(30, f'{ent.score}', C_RED, (35, 55))
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -73,6 +82,8 @@ class Level:
                     if self.spawn_time > 500:
                         self.spawn_time -= 50
                         pygame.time.set_timer(EVENT_ENEMY, self.spawn_time)
+                    if self.timeout == 1000:
+                        pygame.mixer_music.fadeout(1000)
 
                     if self.timeout == 0:
                         for ent in self.entity_list:
@@ -88,14 +99,14 @@ class Level:
                     if isinstance(ent, Player):
                         found_player = True
                 if not found_player:
+                    game_over = GameOver(self.window)
+                    game_over.run()
                     return False
-
-            self.level_text(20, f'TEMPO: {self.timeout / 1000:.1f}s', C_ORANGE, (10, 10))
-            self.level_text(20, f'fps: {clock.get_fps():.0f}', C_WHITE, (WIN_WIDTH - 70, WIN_HEIGHT - 30))
-            self.level_text(20, f'entidades: {len(self.entity_list)}', C_WHITE, (10, WIN_HEIGHT - 30))
+            self.window.blit(self.icon_time, (10, 10))
+            self.level_text(30, f'{self.timeout / 1000:.1f}s', C_RED, (35, 5))
+            self.level_text(15, f'fps: {clock.get_fps():.0f}', C_WHITE, (WIN_WIDTH - 40, WIN_HEIGHT - 15))
+            self.level_text(15, f'entidades: {len(self.entity_list)}', C_WHITE, (10, WIN_HEIGHT - 15))
             pygame.display.flip()
 
             EntityMediator.verify_collision(entity_list=self.entity_list)
             EntityMediator.verify_health(entity_list=self.entity_list)
-
-

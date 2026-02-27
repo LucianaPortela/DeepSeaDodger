@@ -14,7 +14,6 @@ class Score:
         self.surf = pygame.image.load('./asset/ScoreBg.png').convert_alpha()
         self.rect = self.surf.get_rect(left=0, top=0)
 
-
     def save(self, game_mode: str, player_score: list[int]):
         pygame.mixer_music.load('./asset/Score.mp3')
         pygame.mixer_music.play(-1)
@@ -22,20 +21,20 @@ class Score:
         name = ''
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
-            self.score_text(40, 'Parabéns!', C_WHITE, SCORE_POS['Title'])
-            self.score_text(20, 'Seu peixinho conseguiu retornar para casa!', C_WHITE, SCORE_POS['Subtitle'])
+            self.score_text(70, 'Parabéns!', C_WHITE, SCORE_POS['Title'])
+            self.score_text(25, 'Seu peixinho conseguiu retornar para casa!', C_WHITE, SCORE_POS['Subtitle'])
             text = 'Digite o nome do seu peixinho:'
             score = player_score[0]
             if game_mode == MENU_OPTION[0]:
                 score = player_score[0]
-            self.score_text(20, text, C_WHITE, SCORE_POS['EnterName'])
+            self.score_text(35, text, C_WHITE, SCORE_POS['EnterName'])
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
                     sys.exit()
                 elif event.type == KEYDOWN:
                     if event.key == K_RETURN:
-                        if  len(name) >= 1:
+                        if len(name) >= 1:
                             db_proxy.save({'name': name,
                                            'score': score,
                                            'date': get_formatted_date()})
@@ -47,7 +46,7 @@ class Score:
                     else:
                         if len(name) < 8:
                             name += event.unicode
-            self.score_text(25, name, C_WHITE, SCORE_POS['Name'])
+            self.score_text(30, name, C_ORANGE, SCORE_POS['Name'])
             pygame.display.flip()
             pass
 
@@ -55,21 +54,21 @@ class Score:
         pygame.mixer_music.load('./asset/Score.mp3')
         pygame.mixer_music.play(-1)
         self.window.blit(source=self.surf, dest=self.rect)
-        self.score_text(40, '10 MELHORES PEIXINHOS', C_ORANGE, SCORE_POS['Title'])
-        self.score_text(20, 'PEIXINHO', C_WHITE, (SCORE_POS['PlayerName'], SCORE_POS['Label'][1]))
-        self.score_text(20, 'MINHOCAS', C_WHITE, (SCORE_POS['PlayerScore'], SCORE_POS['Label'][1]))
-        self.score_text(20, 'DATA', C_WHITE, (SCORE_POS['PlayerDate'], SCORE_POS['Label'][1]))
+        self.score_text(60, '10 MELHORES PEIXINHOS', C_ORANGE, SCORE_POS['Title'])
+        self.score_text(30, 'PEIXINHO', C_WHITE, (SCORE_POS['PlayerName'], SCORE_POS['Label'][1]))
+        self.score_text(30, 'MINHOCAS', C_WHITE, (SCORE_POS['PlayerScore'], SCORE_POS['Label'][1]))
+        self.score_text(30, 'DATA', C_WHITE, (SCORE_POS['PlayerDate'], SCORE_POS['Label'][1]))
         db_proxy = DBProxy('DBScore')
         list_score = db_proxy.retrieve_top10()
         db_proxy.close()
 
         for player_score in list_score:
             id_, name, score, date = player_score
-            self.score_text(20, f'{name}', C_ORANGE, (SCORE_POS['PlayerName'],
+            self.score_text(27, f'{name}', C_ORANGE, (SCORE_POS['PlayerName'],
                                                       SCORE_POS[list_score.index(player_score)][1]))
-            self.score_text(20, f'{int(score):03d}', C_ORANGE, (SCORE_POS['PlayerScore'],
+            self.score_text(27, f'{int(score):03d}', C_ORANGE, (SCORE_POS['PlayerScore'],
                                                                 SCORE_POS[list_score.index(player_score)][1]))
-            self.score_text(20, f'{date}', C_ORANGE, (SCORE_POS['PlayerDate'],
+            self.score_text(27, f'{date}', C_ORANGE, (SCORE_POS['PlayerDate'],
                                                       SCORE_POS[list_score.index(player_score)][1]))
         while True:
             for event in pygame.event.get():
@@ -84,10 +83,11 @@ class Score:
             pygame.display.flip()
 
     def score_text(self, text_size: int, text: str, text_color: tuple, text_center_pos: tuple):
-        text_font: Font = pygame.font.Font('./asset/BALOOBHAIJAAN-REGULAR.TTF', text_size)
+        text_font: Font = pygame.font.Font('./asset/Ithaca.ttf', text_size)
         text_surf: Surface = text_font.render(text, True, text_color).convert_alpha()
         text_rect: Rect = text_surf.get_rect(center=text_center_pos)
         self.window.blit(source=text_surf, dest=text_rect)
+
 
 def get_formatted_date():
     current_datetime = datetime.now()
