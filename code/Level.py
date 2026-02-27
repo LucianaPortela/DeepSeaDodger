@@ -58,17 +58,17 @@ class Level:
                     sys.exit()
                 if event.type == EVENT_ENEMY:
                     if self.name == 'Level1':
-                        choice = random.choice(('Enemy1', 'Enemy4', 'Enemy5'))
+                        choice = random.choice(('Enemy1', 'Enemy5'))
                     elif self.name == 'Level2':
                         choice = random.choice(('Enemy2', 'Enemy4', 'Enemy5'))
                     elif self.name == 'Level3':
-                        choice = random.choice(('Enemy2', 'Enemy3', 'Enemy3', 'Enemy3', 'Enemy5'))
+                        choice = random.choice(('Enemy2', 'Enemy3', 'Enemy3', 'Enemy3', 'Enemy3', 'Enemy3', 'Enemy5'))
                     self.entity_list.append(EntityFactory.get_entity(choice))
 
                 if event.type == EVENT_TIMEOUT:
                     self.timeout -= TIMEOUT_STEP
-                    if self.spawn_time > 800:
-                        self.spawn_time -= 20
+                    if self.spawn_time > 500:
+                        self.spawn_time -= 50
                         pygame.time.set_timer(EVENT_ENEMY, self.spawn_time)
 
                     if self.timeout == 0:

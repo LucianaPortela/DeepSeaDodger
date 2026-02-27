@@ -3,6 +3,7 @@
 import sys
 import pygame
 from code.Const import WIN_WIDTH, WIN_HEIGHT, MENU_OPTION, ENTITY_HEALTH
+from code.Info import Info
 from code.Level import Level
 from code.Menu import Menu
 from code.Score import Score
@@ -21,6 +22,8 @@ class Game:
             menu_return = menu.run()
 
             if menu_return == MENU_OPTION[0]:
+                info_screen = Info(self.window)
+                info_screen.run()
                 player_score = [0]
                 player_position = [10, WIN_HEIGHT / 2]
                 player_health = [ENTITY_HEALTH['Player1']]

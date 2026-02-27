@@ -3,10 +3,9 @@ import pygame
 # C
 C_ORANGE = (237, 159, 43)
 C_WHITE = (255, 255, 255)
-C_YELLOW = (255, 255, 128)
-C_GREEN = (0, 128, 0)
-C_CYAN = (0, 128, 128)
 C_BLUE = (11, 63, 184)
+C_GREEN = (0, 255, 0)
+C_RED = (150, 0, 10)
 
 # D
 
@@ -35,10 +34,10 @@ ENTITY_SPEED = {
     'Level3Bg3': 1,
     'Level3Bg4': 1,
     'Player1': 4,
-    'Enemy1': 1,
-    'Enemy2': 2,
-    'Enemy3': 5,
-    'Enemy4': 3,
+    'Enemy1': 2,
+    'Enemy2': 4,
+    'Enemy3': 7,
+    'Enemy4': 5,
     'Enemy5': 2,
 }
 
@@ -87,11 +86,11 @@ ENTITY_DAMAGE = {
     'Level3Bg3': 0,
     'Level3Bg4': 0,
     'Player1': 1,
-    'Enemy1': 10,
-    'Enemy2': 50,
-    'Enemy3': 40,
-    'Enemy4': 30,
-    'Enemy5': -50,
+    'Enemy1': 30,
+    'Enemy2': 60,
+    'Enemy3': 80,
+    'Enemy4': 40,
+    'Enemy5': -20,
 }
 
 ENTITY_SCORE = {
