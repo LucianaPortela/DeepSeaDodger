@@ -29,7 +29,9 @@ class Menu:
 
     def run(self):
         menu_option = 0
-
+        pygame.mixer_music.load('./asset/Menu.mp3')
+        pygame.mixer_music.set_volume(0.2)
+        pygame.mixer_music.play(-1)
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
             self.menu_text(75, "Deep Sea", C_BLUE, ((WIN_WIDTH / 2), 60))

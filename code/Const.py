@@ -88,9 +88,9 @@ ENTITY_DAMAGE = {
     'Player1': 1,
     'Enemy1': 30,
     'Enemy2': 60,
-    'Enemy3': 80,
+    'Enemy3': 70,
     'Enemy4': 40,
-    'Enemy5': -20,
+    'Enemy5': -5,
 }
 
 ENTITY_SCORE = {
@@ -132,7 +132,7 @@ PLAYER_KEY_RIGHT = {'Player1': pygame.K_d}
 
 # T
 TIMEOUT_STEP = 100
-TIMEOUT_LEVEL = 20000
+TIMEOUT_LEVEL = 60000
 
 # W
 WIN_WIDTH = 576

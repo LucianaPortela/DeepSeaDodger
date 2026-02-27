@@ -38,7 +38,6 @@ class Info:
             self.info_text(22, f"Dano: -{ENTITY_DAMAGE['Enemy4']}", C_RED, (WIN_WIDTH * 0.65, 110))
             self.window.blit(self.e5, (WIN_WIDTH / 2 + 10, 235))
             self.info_text(22, f"Vida: +{-ENTITY_DAMAGE['Enemy5']}", C_GREEN, (WIN_WIDTH / 2 - 50, 245))
-
             self.info_text(25, "aperte ENTER para iniciar!", C_WHITE, (WIN_WIDTH / 2 - 10, WIN_HEIGHT - 30))
 
             for event in pygame.event.get():
