@@ -80,7 +80,7 @@ class Level:
                     elif self.name == 'Level3':
                         # Randomly select enemies based on the current level difficulty
                         choice = random.choice(
-                            ('Shark', 'Anglerfish', 'Anglerfish', 'Anglerfish', 'Anglerfish', 'Anglerfish', 'Worm'))
+                            ('Shark', 'Anglerfish', 'Anglerfish', 'Anglerfish', 'Worm'))
                     self.entity_list.append(EntityFactory.get_entity(choice))  # Randomly spawn selected enemies
 
                 if event.type == EVENT_TIMEOUT:
@@ -115,7 +115,7 @@ class Level:
                     return False
             # Display FPS and entities
             self.level_text(self.font_small, f'fps: {clock.get_fps():.0f}', C_WHITE,
-                            (DISPLAY_WIDTH - 60, DISPLAY_HEIGHT - 20))
+                            (DISPLAY_WIDTH - 40, DISPLAY_HEIGHT - 20))
             self.level_text(self.font_small, f'entidades: {len(self.entity_list)}', C_WHITE, (10, DISPLAY_HEIGHT - 20))
             pygame.display.flip()
 

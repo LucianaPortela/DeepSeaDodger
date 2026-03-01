@@ -42,7 +42,7 @@ HIT_DAMAGE = {
     'Shark': 60,
     'Anglerfish': 70,
     'Octopus': 40,
-    'Worm': -10,
+    'Worm': -15,
 }
 
 # M
@@ -64,7 +64,7 @@ MAX_HP = {
     'Level3Bg2': 999,
     'Level3Bg3': 999,
     'Level3Bg4': 999,
-    'Player': 100,
+    'Player': 50,
     'Turtle': 1,
     'Shark': 1,
     'Anglerfish': 1,
@@ -159,4 +159,4 @@ SCORE_WORMS = {
 
 # T
 TIMEOUT_STEP = 100
-TIMEOUT_LEVEL = 5000
+TIMEOUT_LEVEL = 30000

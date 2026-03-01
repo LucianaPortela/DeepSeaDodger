@@ -42,7 +42,8 @@ class Game:
 
             elif menu_return == MENU_SELECTION[2]:  # Exit
                 pygame.quit()
-                quit()
+                sys.exit()
+
             else:
                 pygame.quit()
                 sys.exit()

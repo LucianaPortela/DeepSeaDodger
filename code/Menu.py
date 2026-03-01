@@ -1,3 +1,5 @@
+import sys
+
 import pygame
 from code.Const import C_BLUE, MENU_SELECTION, C_ORANGE, DISPLAY_WIDTH, C_WHITE
 
@@ -63,7 +65,7 @@ class Menu:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
-                    quit()
+                    sys.exit()
                 if event.type == pygame.KEYDOWN:
                     # Navigate through menu options with W and S keys
                     if event.key == pygame.K_s:
